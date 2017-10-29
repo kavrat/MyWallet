@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWallet.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,8 @@ namespace MyWallet.Controllers
         }
         public PartialViewResult Filter(int? TypeId)
         {
-
+            TableViewModel data = new TableViewModel(TypeId);
+            return PartialView(data.tableCollection);
         }
 
         // GET: Table/Details/5

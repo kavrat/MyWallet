@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MyWallet.Models.TableViewModel>
+
+@foreach(var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date, new { @class = "form-control" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOp, new { @class = "form-control" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpType, new { @class = "form-control" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount, new { @class = "form-control" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description, new { @class = "form-control" })
+        </td>
+    </tr>
+}

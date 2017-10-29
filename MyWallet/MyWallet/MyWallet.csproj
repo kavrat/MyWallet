@@ -289,6 +289,7 @@
       <DependentUpon>DB.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Table\Index.cshtml" />
+    <Content Include="Views\Table\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
