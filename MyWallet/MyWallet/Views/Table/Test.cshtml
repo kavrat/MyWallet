@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/content/datatables")
+    <title>Test</title>
+</head>
+<body>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>
+            Data
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name of activity</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @Html.Action("Filter")
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/sb-admin-datatables")
+</body>
+</html>

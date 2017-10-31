@@ -1,4 +1,5 @@
 ﻿@model MyWallet.Models.TableViewModel
+@Styles.Render("~/content/datatables")
 
 <div class="card mb-3">
     <div class="card-header">
@@ -24,5 +25,6 @@
             </table>
         </div>
     </div>
-
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/sb-admin-datatables")
 </div>
