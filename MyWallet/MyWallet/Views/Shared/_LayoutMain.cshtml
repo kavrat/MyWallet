@@ -10,6 +10,8 @@
     <title>SB Admin - Start Bootstrap Template</title>
     @Styles.Render("~/content/bootstrap")
     @Styles.Render("~/content/sb-admin")
+    <!--Optional-->
+    @Styles.Render("~/content/datatables")
     <title>@ViewBag.Title</title>
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -217,6 +219,9 @@
         @Scripts.Render("~/bundles/bootstrap")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/sb-admin")
+        <!--Optional-->
+        @Scripts.Render("~/bundles/datatables")
+        @Scripts.Render("~/bundles/sb-admin-datatables")
     </div>
 
 </body>
