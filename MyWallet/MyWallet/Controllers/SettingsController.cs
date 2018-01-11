@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace MyWallet.Controllers
 {
-    public class RevExSettingsController : Controller
+    public class SettingsController : Controller
     {
         WalletDBEntities db = new WalletDBEntities();
         // GET: RevExSettings
         public ActionResult Index()
         {
 
-            return View();
+            return View("RevExSettings");
         }
 
         // GET: RevExSettings/Details/5

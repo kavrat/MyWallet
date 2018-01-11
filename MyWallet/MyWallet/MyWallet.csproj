@@ -186,7 +186,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RevExSettingsController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="DB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -297,7 +297,7 @@
     </Content>
     <Content Include="Views\Table\Index.cshtml" />
     <Content Include="Views\Table\Filter.cshtml" />
-    <Content Include="Views\RevExSettings\Index.cshtml" />
+    <Content Include="Views\Settings\RevExSettings.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
