@@ -5,7 +5,15 @@
         <div class="card mb-3">
             <div class="card-header">Revenues</div>
             <div class="card-body">
-                <h1>Test</h1>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="New revenue...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">Add</button>
+                    </span>
+                </div>
+                <table class="table table-bordered" width="100%" cellpadding="0">
+                    @Html.Action("TypeList", new { type = 1 /*revenue type*/})
+                </table>
             </div>
         </div>
 
@@ -14,7 +22,15 @@
         <div class="card mb-3">
             <div class="card-header">Expenses</div>
             <div class="card-body">
-                <h1>Test2</h1>
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="New expense...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">Add</button>
+                    </span>
+                </div>
+                <table class="table table-bordered" width="100%" cellpadding="0">
+                    @Html.Action("TypeList", new { type = 2 /*expense type*/})
+                </table>
             </div>
         </div>
     </div>

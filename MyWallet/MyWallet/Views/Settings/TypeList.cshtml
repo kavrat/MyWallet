@@ -1,0 +1,12 @@
+﻿@model IQueryable<MyWallet.Models.TypesViewModel>
+
+@foreach(var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Name, new { @class = "form-control" })</td>
+        <td>
+            <button class="btn btn-primary" type="button">Edit</button>
+        </td>
+    </tr>
+}
+

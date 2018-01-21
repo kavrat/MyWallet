@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyWallet.Models;
 
 namespace MyWallet.Controllers
 {
@@ -14,6 +15,17 @@ namespace MyWallet.Controllers
         {
 
             return View("RevExSettings");
+        }
+
+        public PartialViewResult TypeList(int type)
+        {
+            var data = from d in db.Operations
+                       where d.TypeId == type
+                       select new TypesViewModel
+                       {
+                           Name = d.NameOp
+                       };
+            return PartialView(data);
         }
 
         // GET: RevExSettings/Details/5

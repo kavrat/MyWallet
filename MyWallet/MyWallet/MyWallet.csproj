@@ -298,6 +298,7 @@
     <Content Include="Views\Table\Index.cshtml" />
     <Content Include="Views\Table\Filter.cshtml" />
     <Content Include="Views\Settings\RevExSettings.cshtml" />
+    <Content Include="Views\Settings\TypeList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
