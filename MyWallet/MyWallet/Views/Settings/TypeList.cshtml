@@ -2,9 +2,9 @@
 
 @foreach(var item in Model)
 {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Name, new { @class = "form-control" })</td>
-        <td>
+    <tr class="row">
+        <td class="col-md-8">@Html.DisplayFor(modelItem => item.Name, new { @class = "form-control" })</td>
+        <td class="col-md-4">
             <button class="btn btn-primary" type="button">Edit</button>
         </td>
     </tr>
