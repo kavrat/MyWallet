@@ -1,5 +1,9 @@
 ﻿
 @Styles.Render("~/content/datatables")
+@section scripts {
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/sb-admin-datatables")
+    }
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i>
@@ -24,7 +28,4 @@
             </table>
         </div>
     </div>
-    <script>@Scripts.Render("~/bundles/datatables")</script> 
-    <script>@Scripts.Render("~/bundles/sb-admin-datatables")</script>
-    
 </div>

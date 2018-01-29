@@ -26,7 +26,8 @@ namespace MyWallet.Controllers
                        Date = a.Date,
                        Description = a.Description,
                        NameOp = a.Operations.NameOp,
-                       OpType = a.Operations.TypeOperations.Type
+                       OpType = a.Operations.TypeOperations.Type,
+                       Amount = a.Amount
 
                    };
 

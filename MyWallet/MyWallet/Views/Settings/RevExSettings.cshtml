@@ -1,5 +1,14 @@
 ﻿
-
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#example").click(function () {
+                $(this).hide();
+            })
+        })
+    </script>
+    
+    }
 <div class="row">
     <div class="col-md-6">
         <div class="card mb-3">
@@ -39,3 +48,5 @@
         </div>
     </div>
 </div>
+<button id="example">Push me!</button>
+
