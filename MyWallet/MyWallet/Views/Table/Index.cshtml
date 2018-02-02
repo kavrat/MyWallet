@@ -1,5 +1,7 @@
-﻿
-@Styles.Render("~/content/datatables")
+﻿@section styles {
+    @Styles.Render("~/content/datatables")
+    }
+
 @section scripts {
     @Scripts.Render("~/bundles/datatables")
     @Scripts.Render("~/bundles/sb-admin-datatables")

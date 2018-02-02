@@ -10,6 +10,7 @@ namespace MyWallet.Models
     {
         [Key]
         public string Name { get; set; }
+        public int? TypeId { get; set; }
 
     }
 }

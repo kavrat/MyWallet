@@ -23,7 +23,8 @@ namespace MyWallet.Controllers
                        where d.TypeId == type
                        select new TypesViewModel
                        {
-                           Name = d.NameOp
+                           Name = d.NameOp,
+                           TypeId = d.TypeId
                        };
             return PartialView(data);
         }
@@ -34,26 +35,30 @@ namespace MyWallet.Controllers
             return View();
         }
 
-        // GET: RevExSettings/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: RevExSettings/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Add(TypesViewModel t)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+                if (ModelState.IsValid)
+                {
+                    db.Operations.Add(new Operations
+                    {
+                        NameOp = t.Name,
+                        TypeId = t.TypeId,
+                        TypeOperations = db.TypeOperations.Single(x => x.TypeId == t.TypeId)
+                    });
+                    db.SaveChanges();
+                }
                 return View();
             }
+            catch (Exception e)
+            {
+
+                return View(e.Message);// remade(!!!)
+            }
+            
         }
 
         // GET: RevExSettings/Edit/5
