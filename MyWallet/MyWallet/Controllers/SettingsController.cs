@@ -26,16 +26,11 @@ namespace MyWallet.Controllers
                            Name = d.NameOp,
                            TypeId = d.TypeId
                        };
-            return PartialView(data);
+            return PartialView("TypeList", data);
         }
 
-        // GET: RevExSettings/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // POST: RevExSettings/Create
+        // POST: RevExSettings/Add
         [HttpPost]
         public ActionResult Add(TypesViewModel t)
         {
@@ -51,12 +46,11 @@ namespace MyWallet.Controllers
                     });
                     db.SaveChanges();
                 }
-                return View();
+                return new HttpStatusCodeResult(201);
             }
-            catch (Exception e)
+            catch
             {
-
-                return View(e.Message);// remade(!!!)
+                return new HttpStatusCodeResult(501);
             }
             
         }
@@ -81,12 +75,6 @@ namespace MyWallet.Controllers
             {
                 return View();
             }
-        }
-
-        // GET: RevExSettings/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
         }
 
         // POST: RevExSettings/Delete/5
