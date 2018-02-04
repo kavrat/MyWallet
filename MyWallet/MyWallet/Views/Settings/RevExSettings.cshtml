@@ -34,14 +34,14 @@
                     <thead>
                         <tr>
                             <td style="width: 70%">
-                                <input id="revName" class="form-control" type="text" placeholder="New expense...">
+                                <input id="expName" class="form-control" type="text" placeholder="New expense...">
                             </td>
                             <td>
-                                <button id="addRev" class="btn btn-primary" type="button">Add</button>
+                                <button id="addExp" class="btn btn-primary" type="button">Add</button>
                             </td>
                         </tr>
                     </thead>
-                    <tbody id="revData">
+                    <tbody id="expData">
                         @Html.Action("TypeList", new { type = 2 /*revenue type*/})
                     </tbody>
                 </table>
