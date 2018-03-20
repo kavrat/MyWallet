@@ -23,6 +23,7 @@ namespace MyWallet.Controllers
                        where d.TypeId == type
                        select new TypesViewModel
                        {
+                           Id = d.OpId,
                            Name = d.NameOp,
                            TypeId = d.TypeId
                        };
@@ -79,11 +80,11 @@ namespace MyWallet.Controllers
 
         // POST: RevExSettings/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(TypesViewModel t)
         {
             try
             {
-                // TODO: Add delete logic here
+                var operation = db.Operations.Find();
 
                 return RedirectToAction("Index");
             }
