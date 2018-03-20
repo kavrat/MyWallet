@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MyWallet.Models;
 
@@ -80,17 +77,23 @@ namespace MyWallet.Controllers
 
         // POST: RevExSettings/Delete/5
         [HttpPost]
-        public ActionResult Delete(TypesViewModel t)
+        public ActionResult Delete(int index)
         {
+            Operations op = db.Operations.Find(index);
+            
             try
             {
-                var operation = db.Operations.Find();
+                if (op != null)
+                {
+                    db.Operations.Remove(op);
+                    db.SaveChanges();
+                }
 
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(201); //need to be changed
             }
             catch
             {
-                return View();
+                return new HttpStatusCodeResult(501); //need to be changed
             }
         }
     }

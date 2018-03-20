@@ -1,13 +1,26 @@
-﻿$(document).ready(function() {
-    $("button[id*='set']").click(function () {
+﻿$(document).ready(function () {
+    $(".table").on("click", "button[id^='set']", function () {
         var btn = $(this).attr("id");
-        var btnIds = Number(btn.replace(/^\d+/g, ''));
+        var btnIds = btn.replace(/^\D+/g, '');
 
         var TypesViewModel = {};
         var idSelect;
 
         if (btn.indexOf("Del") >= 0) {
+            var idType = Number(btnIds.charAt(0));
+            var idDel = Number(btnIds.substr(1));
 
+            if (idType === 1) {
+                idSelect = "#revData";
+            }
+            else {
+                idSelect = "#expData";
+            }
+
+            $.post("/settings/delete/", { index: idDel },
+                function () {
+                    $(idSelect).load("settings/typelist/", { type: idType });
+                });
         }
 
         if (btn.indexOf("Add") >= 0) {
@@ -30,11 +43,12 @@
                 function () {
                     $(idSelect).load('/settings/typelist/', { type: TypesViewModel.TypeId });
                 });
+            
         }
 
         if (btn.indexOf("Edit") >= 0) {
 
         }
-        
+        //idSelect = null;
     });
 })
