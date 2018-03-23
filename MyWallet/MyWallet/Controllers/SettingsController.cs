@@ -53,25 +53,30 @@ namespace MyWallet.Controllers
             
         }
 
-        // GET: RevExSettings/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
         // POST: RevExSettings/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(TypesViewModel t)
         {
+            Operations op = new Operations
+            {
+                NameOp = t.Name,
+                OpId = t.Id,
+                TypeId = t.TypeId
+            };
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    db.Entry(op).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
 
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(201); //need to be changed
             }
             catch
             {
-                return View();
+                return new HttpStatusCodeResult(501); //need to be changed
             }
         }
 

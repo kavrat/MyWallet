@@ -17,7 +17,28 @@
 
         if (btn.indexOf("Edit") >= 0) {
             var temp = $(this).closest('tr');
-            editRow(temp);
+            editRow(temp, btnIds);
+        }
+
+        if (btn.indexOf("Save") >= 0) {
+            var idType = Number(btnIds.charAt(0));
+            var idVal = Number(btnIds.substr(1));
+
+            TypesViewModel.Id = idVal;
+            TypesViewModel.Name = $("input[id^='setSave_']").val();;
+            TypesViewModel.TypeId = idType;
+
+            if (idType === 1) {
+                idSelect = "#revData";
+            }
+            else {
+                idSelect = "#expData";
+            }
+
+            $.post("/settings/edit", TypesViewModel, function () {
+                $(idSelect).load('/settings/typelist/', { type: TypesViewModel.TypeId });
+            });
+            $(':input').attr('disabled', false);
         }
     });
 
@@ -57,12 +78,15 @@ function deleteFunc(btnIds, idSelect) {
     return idSelect;
 }
 
-function editRow(row) {
+
+function editRow(row, btnIds) {
+    
     $('td:first-child', row).each(function () {
-        $(this).html('<input type="text" value="' + $(this).html() + '" />');
+        $(this).html('<input id="setSave_' + btnIds + '" type="text" value="' + $(this).html() + '" />');
     });
     $('td:nth-child(2)', row).each(function () {
-        $(this).html('<button id="setSave"class="btn btn-primary" type="button">Save</button>');
+        $(this).html('<button id="setSave_' + btnIds + '" class="btn btn-primary" type="button">Save</button>');
     });
-
+    $(':input').not('#setSave_' + btnIds + '').attr('disabled', true);
+    
 }

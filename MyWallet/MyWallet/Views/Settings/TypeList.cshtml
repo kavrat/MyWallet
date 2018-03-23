@@ -5,7 +5,7 @@
     <tr>
         <td>@Html.DisplayFor(modelItem => item.Name, new { @class = "form-control" })</td>
         <td>
-            <button id="setEdit"class="btn btn-primary" type="button">Edit</button>
+            <button id="setEdit_@item.TypeId@item.Id"class="btn btn-primary" type="button">Edit</button>
             <button id="setDelete_@item.TypeId@item.Id" class="btn btn-primary" type="button">Delete</button>
         </td>
     </tr>
