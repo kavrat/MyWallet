@@ -21,28 +21,31 @@
         }
 
         if (btn.indexOf("Save") >= 0) {
-            var idType = Number(btnIds.charAt(0));
-            var idVal = Number(btnIds.substr(1));
-
-            TypesViewModel.Id = idVal;
-            TypesViewModel.Name = $("input[id^='setSave_']").val();;
-            TypesViewModel.TypeId = idType;
-
-            if (idType === 1) {
-                idSelect = "#revData";
-            }
-            else {
-                idSelect = "#expData";
-            }
-
-            $.post("/settings/edit", TypesViewModel, function () {
-                $(idSelect).load('/settings/typelist/', { type: TypesViewModel.TypeId });
-            });
-            $(':input').attr('disabled', false);
+            idSelect = saveFunc(btnIds, TypesViewModel, idSelect);
         }
     });
 
 });
+
+function saceFunc(btnIds, TypesViewModel, idSelect) {
+    var idType = Number(btnIds.charAt(0));
+    var idVal = Number(btnIds.substr(1));
+    TypesViewModel.Id = idVal;
+    TypesViewModel.Name = $("input[id^='setSave_']").val();
+    ;
+    TypesViewModel.TypeId = idType;
+    if (idType === 1) {
+        idSelect = "#revData";
+    }
+    else {
+        idSelect = "#expData";
+    }
+    $.post("/settings/edit", TypesViewModel, function () {
+        $(idSelect).load('/settings/typelist/', { type: TypesViewModel.TypeId });
+    });
+    $(':input').attr('disabled', false);
+    return idSelect;
+}
 
 function addFunc(btn, TypesViewModel, idSelect) {
     if (btn.indexOf("Rev") >= 0) {
@@ -77,7 +80,6 @@ function deleteFunc(btnIds, idSelect) {
     });
     return idSelect;
 }
-
 
 function editRow(row, btnIds) {
     
