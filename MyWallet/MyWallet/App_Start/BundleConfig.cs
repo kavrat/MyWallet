@@ -17,6 +17,11 @@ namespace MyWallet.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/vendor/jquery-easing/jquery.easing.min.js"));
 
+            //Page level scripts for settings
+            bundles.Add(new ScriptBundle("~/bundles/settings").Include(
+                "~/vendor/settings/Settings.js",
+                "~/vendor/settings/jquery-confirm.min.js"));
+
             //Page level plugin JavaScript for charts
             bundles.Add(new ScriptBundle("~/bundles/charts").Include(
                 "~/vendor/chart.js/Chart.min.js"));
@@ -42,6 +47,10 @@ namespace MyWallet.App_Start
             bundles.Add(new StyleBundle("~/content/bootstrap").Include(
                 "~/vendor/bootstrap/css/bootstrap.min.css",
                 "~/vendor/font-awesome/css/font-awesome.min.css"));
+
+            //Page level styles for settings
+            bundles.Add(new StyleBundle("~/contenc/settings").Include(
+                "~/vendor/settings/jquery-confirm.min.css"));
 
             //Page level plugin CSS for Datatables
             bundles.Add(new StyleBundle("~/content/datatables").Include(

@@ -7,7 +7,20 @@
         var idSelect;
 
         if (btn.indexOf("Del") >= 0) {
-            idSelect = deleteFunc(btnIds, idSelect);
+            $.confirm({
+                title: 'Confirm!',
+                content: 'Are you shure?',
+                buttons: {
+                    confirm: function () {
+                        idSelect = deleteFunc(btnIds, idSelect);
+                    },
+                    cancel: function () {
+                        $.alert('Canceled!');
+                    },
+
+                }
+            });
+            //idSelect = deleteFunc(btnIds, idSelect);
         }
 
         if (btn.indexOf("Add") >= 0) {
@@ -27,12 +40,12 @@
 
 });
 
-function saceFunc(btnIds, TypesViewModel, idSelect) {
+function saveFunc(btnIds, TypesViewModel, idSelect) {
     var idType = Number(btnIds.charAt(0));
     var idVal = Number(btnIds.substr(1));
     TypesViewModel.Id = idVal;
     TypesViewModel.Name = $("input[id^='setSave_']").val();
-    ;
+    
     TypesViewModel.TypeId = idType;
     if (idType === 1) {
         idSelect = "#revData";

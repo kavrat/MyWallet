@@ -186,6 +186,8 @@
     <Content Include="vendor\popper\popper.min.js" />
     <Content Include="App_Data\WalletDB.mdf" />
     <Content Include="App_Data\WalletDB_log.ldf" />
+    <Content Include="vendor\settings\jquery-confirm.min.css" />
+    <Content Include="vendor\settings\jquery-confirm.min.js" />
     <Content Include="vendor\settings\Settings.js" />
     <Content Include="Web.config" />
   </ItemGroup>
