@@ -1,0 +1,17 @@
+﻿@model MyWallet.Models.MonthlyValuesViewModel
+
+@*<canvas id="myChart" width="100" height="50"></canvas>*@
+<ul>
+    @foreach (var item in Model.Expenses)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<ul>
+    @foreach (var item in Model.Revenues)
+    {
+        <li>@item</li>
+    }
+</ul>
+

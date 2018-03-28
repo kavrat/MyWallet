@@ -1,15 +1,23 @@
-﻿
+﻿@section scripts {
+    @Scripts.Render("~/bundles/charts")
+    @Scripts.Render("~/bundles/sb-admin-charts")
+}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        <h2>Test</h2>
+<div> 
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card-header"><i class="fa fa-bar-chart"></i> Monthly statistics</div>
+            <div class="card-body" id="BarChart">
+                @Html.Action("GetBarChart")
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-header"><i class="fa fa-pie-chart"></i> Pie chart for last week</div>
+            <div class="card-body">
+                
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+

@@ -218,6 +218,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MonthlyValuesViewModel.cs" />
     <Compile Include="Models\TableViewModel.cs" />
     <Compile Include="Models\TypesViewModel.cs" />
     <Compile Include="Operations.cs">
@@ -311,6 +312,7 @@
     <Content Include="Views\Table\Filter.cshtml" />
     <Content Include="Views\Settings\RevExSettings.cshtml" />
     <Content Include="Views\Settings\TypeList.cshtml" />
+    <Content Include="Views\Home\GetBarChart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

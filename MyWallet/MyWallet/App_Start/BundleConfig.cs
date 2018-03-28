@@ -41,7 +41,7 @@ namespace MyWallet.App_Start
 
             //Custom script for charts
             bundles.Add(new ScriptBundle("~/bundles/sb-admin-charts").Include(
-                "~/js/sb-admin-charts.min.js"));
+                "~/js/sb-admin-charts.js"));
 
             //Bootstrap core CSS and Custom fonts for this template
             bundles.Add(new StyleBundle("~/content/bootstrap").Include(
