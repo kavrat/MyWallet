@@ -300,7 +300,6 @@
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <EntityDeploy Include="DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DB.Designer.cs</LastGenOutput>
@@ -313,6 +312,7 @@
     <Content Include="Views\Settings\RevExSettings.cshtml" />
     <Content Include="Views\Settings\TypeList.cshtml" />
     <Content Include="Views\Home\GetBarChart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

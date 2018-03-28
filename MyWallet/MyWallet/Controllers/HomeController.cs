@@ -16,7 +16,7 @@ namespace MyWallet.Controllers
             return View();
         }
 
-        public PartialViewResult GetBarChart()
+        public JsonResult GetMonthly()
         {
             var sixMonth = DateTime.Now.AddMonths(-6);
             MonthlyValuesViewModel mv = new MonthlyValuesViewModel();
@@ -33,7 +33,9 @@ namespace MyWallet.Controllers
                           group x by x.Date.Month into monthgroup
                           select monthgroup.Sum(x => x.Amount)).ToArray();
 
-            return PartialView(mv);
+            //mv.Months = db.Activities.Where(x => x.Date > sixMonth).Select(x => x.Date.ToString()).ToArray();
+
+            return Json(mv, JsonRequestBehavior.AllowGet);
         }
        
     }

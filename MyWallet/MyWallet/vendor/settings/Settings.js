@@ -16,7 +16,7 @@
                     },
                     cancel: function () {
                         $.alert('Canceled!');
-                    },
+                    }
 
                 }
             });
