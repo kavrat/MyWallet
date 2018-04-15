@@ -7,7 +7,8 @@ namespace MyWallet.Models
 {
     public class MonthlyValuesViewModel
     {
-        public double [] Revenues { get; set; }
-        public double [] Expenses { get; set; }
+        public double MonthRevenue { get; set; }
+        public double MonthExpense { get; set; }
+        public string Month { get; set; }
     }
 }
