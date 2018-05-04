@@ -221,6 +221,7 @@
     <Compile Include="Models\MonthlyValuesViewModel.cs" />
     <Compile Include="Models\TableViewModel.cs" />
     <Compile Include="Models\TypesViewModel.cs" />
+    <Compile Include="Models\WeeklyExpensesViewModel.cs" />
     <Compile Include="Operations.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

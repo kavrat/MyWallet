@@ -34,9 +34,26 @@ namespace MyWallet.Controllers
                     MonthRevenue = item.Where(x => x.Operations.TypeOperations.TypeId == 1).Sum(x => x.Amount)
                 });
             }
-
+            //GetWeeklyExpanses();
             return Json(values, JsonRequestBehavior.AllowGet);
         }
-       
+
+        public JsonResult WeeklyExpanses()
+        {
+            List<WeeklyExpensesViewModel> weeklyExpenses = new List<WeeklyExpensesViewModel>();
+            var lastWeek = DateTime.Now.AddDays(-7);
+            var data = db.Activities
+                .Where(x => x.Date > lastWeek)
+                .Where(x => x.Operations.TypeOperations.TypeId == 2)
+                .GroupBy(x => x.Operations.NameOp)
+                .Select(x => new WeeklyExpensesViewModel
+                {
+                    Name = x.Key,
+                    Value = x.Sum(y => y.Amount)
+                });
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
