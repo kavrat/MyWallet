@@ -29,13 +29,15 @@ function onSuccess(result) {
                         backgroundColor: bgColors,
                         borderColor: borderColors
                     }
-                ],
-            }
-            //options: {
-            //    animation.animateRotate: true,
-            //    animation.animateScale: false,
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Total expanse: ' + expenseValues.reduce((a, b) => a + b, 0)
+                }
 
-            //}
+            }
         });
 }
 
