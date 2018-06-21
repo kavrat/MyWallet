@@ -25,7 +25,7 @@ namespace MyWallet.Controllers
             {
                 values.Add(new MonthlyValuesViewModel
                 {
-                    Month = String.Format("{0}/{1}", item.Key.Month, item.Key.Year),
+                    Month = string.Format("{0}/{1}", item.Key.Month, item.Key.Year),
                     MonthExpense = item.Where(x => x.Operations.TypeOperations.TypeId == 2).Sum(x => x.Amount),
                     MonthRevenue = item.Where(x => x.Operations.TypeOperations.TypeId == 1).Sum(x => x.Amount)
                 });
@@ -34,7 +34,7 @@ namespace MyWallet.Controllers
             return Json(values, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult WeeklyExpanses()
+        public JsonResult GetWeeklyExpanses()
         {
             List<WeeklyExpensesViewModel> weeklyExpenses = new List<WeeklyExpensesViewModel>();
             var lastWeek = DateTime.Now.AddDays(-7);

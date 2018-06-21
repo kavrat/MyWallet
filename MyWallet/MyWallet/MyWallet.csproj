@@ -153,10 +153,11 @@
       <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="js\sb-admin-charts.js" />
+    <Content Include="js\sb-admin-Barchart.js" />
     <Content Include="js\sb-admin-charts.min.js" />
     <Content Include="js\sb-admin-datatables.js" />
     <Content Include="js\sb-admin-datatables.min.js" />
+    <Content Include="js\sb-admin-Piechart.js" />
     <Content Include="js\sb-admin.js" />
     <Content Include="js\sb-admin.min.js" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
@@ -312,7 +313,6 @@
     <Content Include="Views\Table\Filter.cshtml" />
     <Content Include="Views\Settings\RevExSettings.cshtml" />
     <Content Include="Views\Settings\TypeList.cshtml" />
-    <Content Include="Views\Home\GetBarChart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
