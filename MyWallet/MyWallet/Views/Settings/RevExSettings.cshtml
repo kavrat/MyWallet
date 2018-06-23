@@ -5,24 +5,25 @@
 @section scripts {
     @Scripts.Render("~/bundles/settings")
 }
+
 <div id="mainWindow" class="row">
     <div class="col-md-6">
         <div class="card mb-3">
             <div class="card-header bg-success text-white"><i class="fa fa-plus"></i> Revenues</div>
             <div class="card-body">
-                <table class="table" cellpadding="0">
+                <table class="table">
                     <thead>
-                        <tr>
-                            <td style="width: 60%">
-                                <input id="revName" class="form-control" type="text" placeholder="New revenue...">
-                            </td>
-                            <td>
-                                <button id="setAddRev" class="btn btn-primary" type="button">Add</button>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td style="width: 60%">
+                            <input id="revName" class="form-control" type="text" placeholder="New revenue...">
+                        </td>
+                        <td>
+                            <button id="setAddRev" class="btn btn-primary" type="button">Add</button>
+                        </td>
+                    </tr>
                     </thead>
                     <tbody id="revData">
-                        @Html.Action("TypeList", new { type = 1 /*revenue type*/})
+                    @Html.Action("TypeList", new {type = 1 /*revenue type*/})
                     </tbody>
                 </table>
             </div>
@@ -33,24 +34,26 @@
         <div class="card mb-3">
             <div class="card-header bg-primary text-white"><i class="fa fa-minus"></i> Expenses</div>
             <div class="card-body">
-                <table class="table" cellpadding="0">
+                <table class="table">
                     <thead>
-                        <tr>
-                            <td style="width: 60%">
-                                <input id="expName" class="form-control" type="text" placeholder="New expense...">
-                            </td>
-                            <td>
-                                <button id="setAddExp" class="btn btn-primary" type="button">Add</button>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td style="width: 60%">
+                            <input id="expName" class="form-control" type="text" placeholder="New expense...">
+                        </td>
+                        <td>
+                            <button id="setAddExp" class="btn btn-primary" type="button">Add</button>
+                        </td>
+                    </tr>
                     </thead>
                     <tbody id="expData">
-                        @Html.Action("TypeList", new { type = 2 /*revenue type*/})
+                    @Html.Action("TypeList", new {type = 2 /*revenue type*/})
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    
 </div>
 
 

@@ -3,7 +3,41 @@
     @Scripts.Render("~/bundles/sb-admin-charts")
 }
 
-<div> 
+<div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card text-white bg-success o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                    <div class="m-2">Total revenues: @ViewBag.Revenue UAH</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">add revenue</span>
+                    <span class="float-right">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fa fa-minus"></i>
+                    </div>
+                    <div class="m-2">Total expenses: @ViewBag.Expense UAH</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">add expense</span>
+                    <span class="float-right">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-8">
             <div class="card">
@@ -12,7 +46,7 @@
                     <canvas id="BarChart"></canvas>
                 </div>
             </div>
-            
+
         </div>
         <div class="col-md-4">
             <div class="card">
@@ -21,7 +55,7 @@
                     <canvas id="PieChart"></canvas>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>

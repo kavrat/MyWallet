@@ -10,7 +10,12 @@ namespace MyWallet.Controllers
     {
         WalletDBEntities db = new WalletDBEntities();
         // GET: Home
-        public ActionResult Index() => View();
+        public ActionResult Index()
+        {
+            ViewBag.Revenue = db.Activities.Where(x => x.Operations.TypeId == 1).Select(y => y.Amount).Sum();
+            ViewBag.Expense = db.Activities.Where(x => x.Operations.TypeId == 2).Select(y => y.Amount).Sum();
+            return View();
+        }
 
         public JsonResult GetMonthly()
         {
