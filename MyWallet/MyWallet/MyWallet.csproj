@@ -220,6 +220,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MonthlyValuesViewModel.cs" />
+    <Compile Include="Models\RevenueViewModel.cs" />
     <Compile Include="Models\TableViewModel.cs" />
     <Compile Include="Models\TypesViewModel.cs" />
     <Compile Include="Models\WeeklyExpensesViewModel.cs" />

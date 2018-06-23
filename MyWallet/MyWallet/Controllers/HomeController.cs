@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using MyWallet.Models;
 
@@ -56,5 +57,30 @@ namespace MyWallet.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
+        //!!!!!
+        [HttpPost]
+        public ActionResult AddRevenue(RevenueViewModel revenue)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Activities.Add(new Activities
+                    {
+                        Amount = revenue.Amount,
+                        Description = revenue.Description,
+                        Date = DateTime.Now,
+                        OpId = revenue.OpId
+                    });
+                    db.SaveChanges();
+
+                }
+                return new HttpStatusCodeResult(HttpStatusCode.OK);
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+        }
     }
 }
